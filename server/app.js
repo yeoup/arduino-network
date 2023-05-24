@@ -3,6 +3,7 @@
 // Modules
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -10,8 +11,9 @@ dotenv.config();
 const home = require("./src/routes/home");
 
 // Middleware
-app.use(express.json()) // body-parser
-app.use(express.urlencoded({ extended: true }))
+app.use(bodyParser.json({ extended: true })); // body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.raw({ extended: true }));
 
 app.use("/", home);
 
