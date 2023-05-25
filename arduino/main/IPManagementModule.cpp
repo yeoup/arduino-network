@@ -4,8 +4,7 @@
 // IP 발급 메서드
 void IPManagementModule::initIP(byte *mac)
 {
-    // 이더넷 연결 시작
-    Serial.print("Mac ip address: ");
+    Serial.print("Mac ip address: "); // mac 주소 출력
     for (int i = 0; i < 6; i++)
     {
         Serial.print(mac[i], HEX);
